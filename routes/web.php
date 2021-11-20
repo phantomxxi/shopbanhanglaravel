@@ -11,10 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('layout');
-});
+Route::get('/', 'HomeController@index');
 
-Route::get('/trang-chu', function () {
-    return view('layout');
-});
+Route::get('/trang-chu', 'HomeController@index');
