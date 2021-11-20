@@ -6,16 +6,16 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>Home | E-Shopper</title>
-    <link href="{{ (' public/frontend/css/bootstrap.min.css') }} " rel="stylesheet">
-    <link href="{{ (' public/frontend/css/font-awesome.min.css') }} " rel="stylesheet">
-    <link href="{{ (' public/frontend/css/prettyPhoto.css') }} " rel="stylesheet">
-    <link href="{{ (' public/frontend/css/price-range.css') }} " rel="stylesheet">
-    <link href="{{ (' public/frontend/css/animate.css') }} " rel="stylesheet">
-    <link href="{{ (' public/frontend/css/main.css') }} " rel="stylesheet">
-    <link href="{{ (' public/frontend/css/responsive.css') }} " rel="stylesheet">
+    <link href="{{  asset('public/frontend/css/bootstrap.min.css') }} " rel="stylesheet">
+    <link href="{{  asset('public/frontend/css/font-awesome.min.css') }} " rel="stylesheet">
+    <link href="{{  asset('public/frontend/css/prettyPhoto.css') }} " rel="stylesheet">
+    <link href="{{  asset('public/frontend/css/price-range.css') }} " rel="stylesheet">
+    <link href="{{  asset('public/frontend/css/animate.css') }} " rel="stylesheet">
+    <link href="{{  asset('public/frontend/css/main.css') }} " rel="stylesheet">
+    <link href="{{  asset('public/frontend/css/responsive.css') }} " rel="stylesheet">
     <!--[if lt IE 9]>
-    <script src="{{ (' public/frontend/js/html5shiv.js') }} "></script>
-    <script src="{{ (' public/frontend/js/respond.min.js') }} "></script>
+    <script src="{{  asset(' public/frontend/js/html5shiv.js') }} "></script>
+    <script src="{{  asset(' public/frontend/js/respond.min.js') }} "></script>
     <![endif]-->
     <link rel="shortcut icon" href="{{('public/frontend/images/favicon.ico')}}">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{('public/frontend/images/apple-touch-icon-144-precomposed.png')}}">
@@ -57,7 +57,7 @@
             <div class="row">
                 <div class="col-md-4 clearfix">
                     <div class="logo pull-left">
-                        <a href="index.html"><img src="{{('public/frontend/images/logo.png')}}" alt="" /></a>
+                        <a href="index.html"><img src="{{asset('public/frontend/images/logo.png')}}" alt="" /></a>
                     </div>
                     <div class="btn-group pull-right clearfix">
                         <div class="btn-group">
@@ -112,7 +112,7 @@
                     </div>
                     <div class="mainmenu pull-left">
                         <ul class="nav navbar-nav collapse navbar-collapse">
-                            <li><a href="index.html" class="active">Home</a></li>
+                            <li><a href="{{  URL::to('/trang-chu') }}" class="active">Home</a></li>
                             <li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
                                 <ul role="menu" class="sub-menu">
                                     <li><a href="shop.html">Products</a></li>
@@ -163,8 +163,8 @@
                                 <button type="button" class="btn btn-default get">Get it now</button>
                             </div>
                             <div class="col-sm-6">
-                                <img src="{{('public/frontend/images/girl1.jpg')}}" class="girl img-responsive" alt="" />
-                                <img src="{{('public/frontend/images/pricing.png')}}"  class="pricing" alt="" />
+                                <img src="{{  asset('public/frontend/images/girl1.jpg')}}" class="girl img-responsive" alt="" />
+                                <img src="{{  asset('public/frontend/images/pricing.png')}}"  class="pricing" alt="" />
                             </div>
                         </div>
                         <div class="item">
@@ -175,8 +175,8 @@
                                 <button type="button" class="btn btn-default get">Get it now</button>
                             </div>
                             <div class="col-sm-6">
-                                <img src="{{('public/frontend/images/girl2.jpg')}}" class="girl img-responsive" alt="" />
-                                <img src="{{('public/frontend/images/pricing.png')}}"  class="pricing" alt="" />
+                                <img src="{{  asset('public/frontend/images/girl2.jpg')}}" class="girl img-responsive" alt="" />
+                                <img src="{{  asset('public/frontend/images/pricing.png')}}"  class="pricing" alt="" />
                             </div>
                         </div>
 
@@ -188,8 +188,8 @@
                                 <button type="button" class="btn btn-default get">Get it now</button>
                             </div>
                             <div class="col-sm-6">
-                                <img src="{{('public/frontend/images/girl3.jpg')}}" class="girl img-responsive" alt="" />
-                                <img src="{{('public/frontend/images/pricing.png')}}" class="pricing" alt="" />
+                                <img src="{{  asset('public/frontend/images/girl3.jpg')}}" class="girl img-responsive" alt="" />
+                                <img src="{{  asset('public/frontend/images/pricing.png')}}" class="pricing" alt="" />
                             </div>
                         </div>
 
@@ -345,167 +345,25 @@
                     </div><!--/price-range-->
 
                     <div class="shipping text-center"><!--shipping-->
-                        <img src="{{('public/frontend/images/shipping.jpg')}}" alt="" />
+                        <img src="{{  asset('public/frontend/images/shipping.jpg')}}" alt="" />
                     </div><!--/shipping-->
 
                 </div>
             </div>
 
             <div class="col-sm-9 padding-right">
-                <div class="features_items"><!--features_items-->
-                    <h2 class="title text-center">Features Items</h2>
-                    <div class="col-sm-4">
-                        <div class="product-image-wrapper">
-                            <div class="single-products">
-                                <div class="productinfo text-center">
-                                    <img src="{{('public/frontend/images/product1.jpg')}}" alt="" />
-                                    <h2>$56</h2>
-                                    <p>Easy Polo Black Edition</p>
-                                    <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                                </div>
-                                <div class="product-overlay">
-                                    <div class="overlay-content">
-                                        <h2>$56</h2>
-                                        <p>Easy Polo Black Edition</p>
-                                        <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="choose">
-                                <ul class="nav nav-pills nav-justified">
-                                    <li><a href="#"><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
-                                    <li><a href="#"><i class="fa fa-plus-square"></i>Add to compare</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
 
-                </div><!--features_items-->
+                @yield('content')
+                <!--features_items-->
 
-                <div class="category-tab"><!--category-tab-->
-                    <div class="col-sm-12">
-                        <ul class="nav nav-tabs">
-                            <li class="active"><a href="#tshirt" data-toggle="tab">T-Shirt</a></li>
+                <!--features_items-->
 
-                        </ul>
-                    </div>
+                <!--category-tab-->
 
-                    <div class="tab-content">
-                        <div class="tab-pane fade active in" id="tshirt" >
-                            <div class="col-sm-3">
-                                <div class="product-image-wrapper">
-                                    <div class="single-products">
-                                        <div class="productinfo text-center">
-                                            <img src="{{ ('public/frontend/images/gallery1.jpg') }}" alt="" />
-                                            <h2>$56</h2>
-                                            <p>Easy Polo Black Edition</p>
-                                            <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                                        </div>
+                <!--/category-tab-->
 
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div><!--/category-tab-->
-
-                <div class="recommended_items"><!--recommended_items-->
-                    <h2 class="title text-center">recommended items</h2>
-
-                    <div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="item active">
-                                <div class="col-sm-4">
-                                    <div class="product-image-wrapper">
-                                        <div class="single-products">
-                                            <div class="productinfo text-center">
-                                                <img src="{{ ('public/frontend/images/recommend1.jpg') }}" alt="" />
-                                                <h2>$56</h2>
-                                                <p>Easy Polo Black Edition</p>
-                                                <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-4">
-                                    <div class="product-image-wrapper">
-                                        <div class="single-products">
-                                            <div class="productinfo text-center">
-                                                <img src="{{ ('public/frontend/images/recommend1.jpg') }}" alt="" />
-                                                <h2>$56</h2>
-                                                <p>Easy Polo Black Edition</p>
-                                                <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-4">
-                                    <div class="product-image-wrapper">
-                                        <div class="single-products">
-                                            <div class="productinfo text-center">
-                                                <img src="{{ ('public/frontend/images/recommend1.jpg') }}" alt="" />
-                                                <h2>$56</h2>
-                                                <p>Easy Polo Black Edition</p>
-                                                <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="col-sm-4">
-                                    <div class="product-image-wrapper">
-                                        <div class="single-products">
-                                            <div class="productinfo text-center">
-                                                <img src="{{ ('public/frontend/images/recommend1.jpg') }}" alt="" />
-                                                <h2>$56</h2>
-                                                <p>Easy Polo Black Edition</p>
-                                                <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-4">
-                                    <div class="product-image-wrapper">
-                                        <div class="single-products">
-                                            <div class="productinfo text-center">
-                                                <img src="{{ ('public/frontend/images/recommend1.jpg') }}" alt="" />
-                                                <h2>$56</h2>
-                                                <p>Easy Polo Black Edition</p>
-                                                <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-4">
-                                    <div class="product-image-wrapper">
-                                        <div class="single-products">
-                                            <div class="productinfo text-center">
-                                                <img src="{{ ('public/frontend/images/recommend1.jpg') }}" alt="" />
-                                                <h2>$56</h2>
-                                                <p>Easy Polo Black Edition</p>
-                                                <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <a class="left recommended-item-control" href="#recommended-item-carousel" data-slide="prev">
-                            <i class="fa fa-angle-left"></i>
-                        </a>
-                        <a class="right recommended-item-control" href="#recommended-item-carousel" data-slide="next">
-                            <i class="fa fa-angle-right"></i>
-                        </a>
-                    </div>
-                </div><!--/recommended_items-->
+                    <!--/recommended_items-->
+                <!--/recommended_items-->
 
             </div>
         </div>
@@ -527,7 +385,7 @@
                         <div class="video-gallery text-center">
                             <a href="#">
                                 <div class="iframe-img">
-                                    <img src="{{ ('public/frontend/images/iframe1.png') }}" alt="" />
+                                    <img src="{{  asset('public/frontend/images/iframe1.png') }}" alt="" />
                                 </div>
                                 <div class="overlay-icon">
                                     <i class="fa fa-play-circle-o"></i>
@@ -542,7 +400,7 @@
                         <div class="video-gallery text-center">
                             <a href="#">
                                 <div class="iframe-img">
-                                    <img src="{{ ('public/frontend/images/iframe2.png') }}" alt="" />
+                                    <img src="{{  asset('public/frontend/images/iframe2.png') }}" alt="" />
                                 </div>
                                 <div class="overlay-icon">
                                     <i class="fa fa-play-circle-o"></i>
@@ -557,7 +415,7 @@
                         <div class="video-gallery text-center">
                             <a href="#">
                                 <div class="iframe-img">
-                                    <img src="{{ ('public/frontend/images/iframe3.png') }}" alt="" />
+                                    <img src="{{  asset('public/frontend/images/iframe3.png') }}" alt="" />
                                 </div>
                                 <div class="overlay-icon">
                                     <i class="fa fa-play-circle-o"></i>
@@ -572,7 +430,7 @@
                         <div class="video-gallery text-center">
                             <a href="#">
                                 <div class="iframe-img">
-                                    <img src="{{ ('public/frontend/images/iframe4.png') }}" alt="" />
+                                    <img src="{{  asset('public/frontend/images/iframe4.png') }}" alt="" />
                                 </div>
                                 <div class="overlay-icon">
                                     <i class="fa fa-play-circle-o"></i>
@@ -585,7 +443,7 @@
                 </div>
                 <div class="col-sm-3">
                     <div class="address">
-                        <img src="{{ ('public/frontend/images/map.png') }}" alt="" />
+                        <img src="{{  asset('public/frontend/images/map.png') }}" alt="" />
                         <p>505 S Atlantic Ave Virginia Beach, VA(Virginia)</p>
                     </div>
                 </div>
@@ -672,11 +530,11 @@
 
 
 
-<script src="{{ (' public/frontend/js/jquery.js') }} "></script>
-<script src="{{ (' public/frontend/js/bootstrap.min.js') }} "></script>
-<script src="{{ (' public/frontend/js/jquery.scrollUp.min.js') }} "></script>
-<script src="{{ (' public/frontend/js/price-range.js') }} "></script>
-<script src="{{ (' public/frontend/js/jquery.prettyPhoto.js') }} "></script>
-<script src="{{ (' public/frontend/js/main.js') }} "></script>
+<script src="{{  asset('public/frontend/js/jquery.js') }} "></script>
+<script src="{{  asset('public/frontend/js/bootstrap.min.js') }} "></script>
+<script src="{{  asset('public/frontend/js/jquery.scrollUp.min.js') }} "></script>
+<script src="{{  asset('public/frontend/js/price-range.js') }} "></script>
+<script src="{{  asset('public/frontend/js/jquery.prettyPhoto.js') }} "></script>
+<script src="{{  asset('public/frontend/js/main.js') }} "></script>
 </body>
 </html>
