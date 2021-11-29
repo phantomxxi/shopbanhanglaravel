@@ -36,7 +36,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         $message = Session::get('message');
         if ($message) {
             echo '<span class="text-alert" style="color: red; font-size: 17px; min-width: 100%; text-align: center;font-weight: bold;">' . $message . '</span>';
-            Session::get('message', null);
+            Session::put('message', null);
         }
         ?>
         <form action="{{ URL::to('/admin-dashboard') }}" method="post">

@@ -25,3 +25,4 @@ Route::post('/admin-dashboard', 'AdminController@dashboard');
 // Category Product
 Route::get('/add-category-product', 'CategoryProduct@add_category_product');
 Route::get('/all-category-product', 'CategoryProduct@all_category_product');
+Route::post('/save-category-product', 'CategoryProduct@save_category_product');
