@@ -11,7 +11,7 @@
                 <?php
                 $message = Session::get('message');
                 if ($message) {
-                    echo '<span class="text-alert" style="color: red; font-size: 17px; min-width: 100%; text-align: center;font-weight: bold;">'.$message.'</span>';
+                    echo '<span class="text-alert" >'.$message.'</span>';
                     Session::put('message', null);
                 }
                 ?>
