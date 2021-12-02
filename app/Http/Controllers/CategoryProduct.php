@@ -60,11 +60,6 @@ class CategoryProduct extends Controller
         return view('admin_layout')->with('admin.edit_category_product', $manager_category_product);
     }
 
-    public function delete_category_product()
-    {
-
-    }
-
     public function update_category_product($category_product_id, Request $request)
     {
         $data = array();
@@ -75,6 +70,11 @@ class CategoryProduct extends Controller
         return Redirect::to('all-category-product');
     }
 
-
+    public function delete_category_product($category_product_id)
+    {
+        DB::table('tbl_category_product')->where('category_id', $category_product_id)->delete();
+        Session::put('message', 'Xóa danh mục sản phẩm thành công');
+        return Redirect::to('all-category-product');
+    }
 
 }
