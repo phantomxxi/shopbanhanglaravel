@@ -53,27 +53,27 @@ class BrandProduct extends Controller
         return Redirect::to('all-brand-product');
     }
 
-    public function edit_category_product($category_product_id)
+    public function edit_brand_product($brand_product_id)
     {
-        $edit_category_product = DB::table('tbl_category_product')->where('category_id', $category_product_id)->get();
-        $manager_category_product = view('admin.edit_category_product')->with('edit_category_product', $edit_category_product);
-        return view('admin_layout')->with('admin.edit_category_product', $manager_category_product);
+        $edit_brand_product = DB::table('tbl_brand')->where('brand_id', $brand_product_id)->get();
+        $manager_brand_product = view('admin.edit_brand_product')->with('edit_brand_product', $edit_brand_product);
+        return view('admin_layout')->with('admin.edit_brand_product', $manager_brand_product);
     }
 
-    public function update_category_product($category_product_id, Request $request)
+    public function update_brand_product($brand_product_id, Request $request)
     {
         $data = array();
-        $data['category_name'] = $request->category_product_name;
-        $data['category_desc'] = $request->category_product_desc;
-        DB::table('tbl_category_product')->where('category_id', $category_product_id)->update($data);
-        Session::put('message', 'Cập nhật danh mục sản phẩm thành công');
-        return Redirect::to('all-category-product');
+        $data['brand_name'] = $request->brand_product_name;
+        $data['brand_desc'] = $request->brand_product_desc;
+        DB::table('tbl_brand')->where('brand_id', $brand_product_id)->update($data);
+        Session::put('message', 'Cập nhật thương hiệu sản phẩm thành công');
+        return Redirect::to('all-brand-product');
     }
 
-    public function delete_category_product($category_product_id)
+    public function delete_brand_product($brand_product_id)
     {
-        DB::table('tbl_category_product')->where('category_id', $category_product_id)->delete();
-        Session::put('message', 'Xóa danh mục sản phẩm thành công');
-        return Redirect::to('all-category-product');
+        DB::table('tbl_brand')->where('brand_id', $brand_product_id)->delete();
+        Session::put('message', 'Xóa thương hiệu sản phẩm thành công');
+        return Redirect::to('all-brand-product');
     }
 }
