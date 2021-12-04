@@ -16,7 +16,7 @@
                     }
                     ?>
                     <div class="position-center">
-                        <form role="form" action="{{ URL::to('/save-product') }}" method="post">
+                        <form role="form" action="{{ URL::to('/save-product') }}" method="post" enctype="multipart/form-data">
                             {{ csrf_field() }}
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Tên sản phẩm</label>
@@ -40,16 +40,18 @@
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputPassword1">Danh mục sản phẩm</label>
-                                <select name="product_status" class="form-control input-sm m-bot15">
-                                    <option value="0">Nam</option>
-                                    <option value="1">Nữ</option>
+                                <select name="product_cate" class="form-control input-sm m-bot15">
+                                    @foreach($cate_product as $key => $cate)
+                                    <option value="{{ $cate->category_id }}">{{ $cate->category_name }}</option>
+                                    @endforeach
                                 </select>
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputPassword1">Thương hiệu</label>
-                                <select name="product_status" class="form-control input-sm m-bot15">
-                                    <option value="0">Dell</option>
-                                    <option value="1">Samsung</option>
+                                <select name="product_brand" class="form-control input-sm m-bot15">
+                                    @foreach($brand_product as $key => $brand)
+                                        <option value="{{ $brand->brand_id }}">{{ $brand->brand_name }}</option>
+                                    @endforeach
                                 </select>
                             </div>
                             <div class="form-group">
