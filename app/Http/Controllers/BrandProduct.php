@@ -14,43 +14,43 @@ class BrandProduct extends Controller
     //    Them Danh Muc San Pham
     public function add_brand_product()
     {
-        return view('admin.add_category_product');
+        return view('admin.add_brand_product');
     }
 
 //    Liet Ke Danh Muc San Pham
-    public function all_category_product()
+    public function all_brand_product()
     {
-        $all_category_product = DB::table('tbl_category_product')->get();
-        $manager_category_product = view('admin.all_category_product')->with('all_category_product', $all_category_product);
-        return view('admin_layout')->with('admin.all_category_product', $manager_category_product);
+        $all_brand_product = DB::table('tbl_brand')->get();
+        $manager_brand_product = view('admin.all_brand_product')->with('all_brand_product', $all_brand_product);
+        return view('admin_layout')->with('admin.all_brand_product', $manager_brand_product);
     }
 
 //    Luu Du Lieu Vao DB
-    public function save_category_product(Request $request)
+    public function save_brand_product(Request $request)
     {
         $data = array();
-        $data['category_name'] = $request->category_product_name;
-        $data['category_desc'] = $request->category_product_desc;
-        $data['category_status'] = $request->category_product_status;
+        $data['brand_name'] = $request->brand_product_name;
+        $data['brand_desc'] = $request->brand_product_desc;
+        $data['brand_status'] = $request->brand_product_status;
 
-        DB::table('tbl_category_product')->insert($data);
-        Session::put('message', 'Thêm danh mục sản phẩm thành công');
-        return Redirect::to('add-category-product');
+        DB::table('tbl_brand')->insert($data);
+        Session::put('message', 'Thêm thương hiệu sản phẩm thành công');
+        return Redirect::to('add-brand-product');
     }
 
 
-    public function unactive_category_product($category_product_id)
+    public function unactive_brand_product($brand_product_id)
     {
-        DB::table('tbl_category_product')->where('category_id', $category_product_id)->update(['category_status'=>1]);
-        Session::put('message', 'Không kích hoạt danh mục sản phẩm thành công');
-        return Redirect::to('all-category-product');
+        DB::table('tbl_brand')->where('brand_id', $brand_product_id)->update(['brand_status'=>1]);
+        Session::put('message', 'Không kích hoạt thương hiệu sản phẩm thành công');
+        return Redirect::to('all-brand-product');
     }
 
-    public function active_category_product($category_product_id)
+    public function active_brand_product($brand_product_id)
     {
-        DB::table('tbl_category_product')->where('category_id', $category_product_id)->update(['category_status'=>0]);
-        Session::put('message', 'Kích hoạt danh mục sản phẩm thành công');
-        return Redirect::to('all-category-product');
+        DB::table('tbl_brand')->where('brand_id', $brand_product_id)->update(['brand_status'=>0]);
+        Session::put('message', 'Kích hoạt thương hiệu sản phẩm thành công');
+        return Redirect::to('all-brand-product');
     }
 
     public function edit_category_product($category_product_id)
