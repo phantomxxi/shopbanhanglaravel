@@ -22,7 +22,10 @@ class ProductController extends Controller
 //    Liet Ke Danh Muc San Pham
     public function all_product()
     {
-        $all_product = DB::table('tbl_product')->get();
+        $all_product = DB::table('tbl_product')
+            ->join('tbl_category_product','tbl_category_product.category_id','=', 'tbl_product.category_id')
+            ->join('tbl_brand','tbl_brand.brand_id','=', 'tbl_product.brand_id')
+            ->orderBy('tbl_product.product_id', 'desc')->get();
         $manager_product = view('admin.all_product')->with('all_product', $all_product);
         return view('admin_layout')->with('admin.all_product', $manager_product);
     }
@@ -59,25 +62,27 @@ class ProductController extends Controller
     }
 
 
-    public function unactive_brand_product($brand_product_id)
+    public function unactive_product($product_id)
     {
-        DB::table('tbl_brand')->where('brand_id', $brand_product_id)->update(['brand_status'=>1]);
-        Session::put('message', 'Không kích hoạt thương hiệu sản phẩm thành công');
-        return Redirect::to('all-brand-product');
+        DB::table('tbl_product')->where('product_id', $product_id)->update(['product_status'=>1]);
+        Session::put('message', 'Không kích hoạt sản phẩm thành công');
+        return Redirect::to('all-product');
     }
 
-    public function active_brand_product($brand_product_id)
+    public function active_product($product_id)
     {
-        DB::table('tbl_brand')->where('brand_id', $brand_product_id)->update(['brand_status'=>0]);
-        Session::put('message', 'Kích hoạt thương hiệu sản phẩm thành công');
-        return Redirect::to('all-brand-product');
+        DB::table('tbl_product')->where('product_id', $product_id)->update(['product_status'=>0]);
+        Session::put('message', 'Kích hoạt sản phẩm thành công');
+        return Redirect::to('all-product');
     }
 
-    public function edit_brand_product($brand_product_id)
+    public function edit_product($product_id)
     {
-        $edit_brand_product = DB::table('tbl_brand')->where('brand_id', $brand_product_id)->get();
-        $manager_brand_product = view('admin.edit_brand_product')->with('edit_brand_product', $edit_brand_product);
-        return view('admin_layout')->with('admin.edit_brand_product', $manager_brand_product);
+        $cate_product = DB::table('tbl_category_product')->orderBy('category_id', 'desc')->get();
+        $brand_product = DB::table('tbl_brand')->orderBy('brand_id', 'desc')->get();
+        $edit_product = DB::table('tbl_product')->where('product_id', $product_id)->get();
+        $manager_product = view('admin.edit_product')->with('edit_product', $edit_product);
+        return view('admin_layout')->with('admin.edit_product', $manager_product);
     }
 
     public function update_brand_product($brand_product_id, Request $request)
