@@ -13,7 +13,8 @@
     <link href="{{  asset('public/frontend/css/animate.css') }} " rel="stylesheet">
     <link href="{{  asset('public/frontend/css/main.css') }} " rel="stylesheet">
     <link href="{{  asset('public/frontend/css/responsive.css') }} " rel="stylesheet">
-    <!--[if lt IE 9]>
+    <link href="{{  asset('public/frontend/css/custom.css') }} " rel="stylesheet">
+<!--[if lt IE 9]>
     <script src="{{  asset(' public/frontend/js/html5shiv.js') }} "></script>
     <script src="{{  asset(' public/frontend/js/respond.min.js') }} "></script>
     <![endif]-->
