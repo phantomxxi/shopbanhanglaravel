@@ -69,3 +69,7 @@ Route::get('/active-product/{product_id}', 'ProductController@active_product');
 
 Route::post('/save-product', 'ProductController@save_product');
 Route::post('/update-product/{product_id}', 'ProductController@update_product');
+
+
+// Cart
+Route::post('/save-cart', 'CartController@save_cart');
