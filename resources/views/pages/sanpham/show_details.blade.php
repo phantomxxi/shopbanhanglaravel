@@ -36,7 +36,7 @@
                     <h2>{{$value->product_name}}</h2>
                     <p>Mã ID: {{$value->product_id}}</p>
                     <img src="{{URL::to('/public/frontend/images/rating.png')}}" alt=""/>
-                    <form action="{{URL::to('/save-cart')}}" method="POST">
+                    <form action="{{URL::to('/save-cart')}}" method="post">
                         {{ csrf_field() }}
                         <span>
                             <span>{{number_format($value->product_price).' VND'}}</span>
@@ -92,7 +92,7 @@
                             voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
                         <p><b>Write Your Review</b></p>
 
-                        <form action="#">
+                        <form action="#" method="post">
 										<span>
 											<input type="text" placeholder="Your Name"/>
 											<input type="email" placeholder="Email Address"/>
@@ -119,7 +119,10 @@
         <div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="item active">
+                    <form action="{{URL::to('/save-cart')}}" method="post">
+                        {{ csrf_field() }}
                     @foreach($relate as $key => $lienquan)
+                        <a href="{{URL::to('/chi-tiet-san-pham/'.$lienquan->product_id)}}">
                         <div class="col-sm-4">
                             <div class="product-image-wrapper">
                                 <div class="single-products">
@@ -134,7 +137,9 @@
                                 </div>
                             </div>
                         </div>
+                        </a>
                     @endforeach
+                    </form>
                 </div>
             </div>
             <a class="left recommended-item-control" href="#recommended-item-carousel" data-slide="prev">
