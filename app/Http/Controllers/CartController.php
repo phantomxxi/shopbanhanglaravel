@@ -27,6 +27,7 @@ class CartController extends Controller
         $data['weight'] = '123';
         $data['options']['image'] = $product_info->product_image;
         Cart::add($data);
+        Cart::setGlobalTax(10);
         return Redirect::to('/show-cart');
     }
 
