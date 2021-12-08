@@ -40,9 +40,13 @@
                         </td>
                         <td class="cart_quantity">
                             <div class="cart_quantity_button">
-                                <a class="cart_quantity_up" href=""> + </a>
-                                <input class="cart_quantity_input" type="text" name="quantity" value="{{ $v_content->qty }}" autocomplete="off" size="2">
-                                <a class="cart_quantity_down" href=""> - </a>
+                                <form action="{{ URL::to('/update-cart-quantity') }}" method="post">
+                                    {{ csrf_field() }}
+                                    <input class="cart_quantity_input" type="text" name="cart_quantity" value="{{ $v_content->qty }}">
+                                    <input type="hidden" value="{{ $v_content->rowId }}" name="rowId_cart" class="form-control">
+                                    <input type="submit" value="Cập nhật" name="update_qty" class="btn btn-default btn-sm">
+                                </form>
+
                             </div>
                         </td>
                         <td class="cart_total">
