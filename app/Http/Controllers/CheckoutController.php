@@ -25,14 +25,14 @@ class CheckoutController extends Controller
         $data = array();
         $data['customer_name'] = $request->customer_name;
         $data['customer_email'] = $request->customer_email;
-        $data['customer_password'] = $request->customer_password;
+        $data['customer_password'] = md5($request->customer_password);
         $data['customer_phone'] = $request->customer_phone;
 
         $customer_id = DB::table('tbl_customers')->insert($data);
 
         Session::put('customer_id', $customer_id);
         Session::put('customer_name', $request->customer_name);
-        return Redirect::to('checkout');
+        return Redirect::to('/checkout');
     }
 
     public function checkout()
@@ -57,11 +57,32 @@ class CheckoutController extends Controller
         $shipping_id = DB::table('tbl_shipping')->insert($data);
 
         Session::put('customer_id', $shipping_id);
-        return Redirect::to('payment');
+        return Redirect::to('/payment');
     }
 
     public function payment()
     {
+
+    }
+
+    public function logout_checkout()
+    {
+        Session::flush();
+        return Redirect::to('/login-checkout');
+    }
+
+    public function login_customer(Request $request)
+    {
+        $email = $request->email_account;
+        $password = md5($request->password_account);
+        $result = DB::table('tbl_customers')->where('customer_email', $email)->where('customer_password', $password)->first();
+
+        if ($result) {
+            Session::put('customer_id', $result->customer_id);
+            return Redirect::to('/checkout');
+        } else {
+            return Redirect::to('/login-checkout');
+        }
 
     }
 }

@@ -80,6 +80,8 @@ Route::get('/delete-to-cart/{rowId}', 'CartController@delete_to_cart');
 
 // Check out
 Route::get('/login-checkout', 'CheckoutController@login_checkout');
+Route::get('/logout-checkout', 'CheckoutController@logout_checkout');
 Route::post('/add-customer', 'CheckoutController@add_customer');
+Route::post('/login-customer', 'CheckoutController@login_customer');
 Route::get('/checkout', 'CheckoutController@checkout');
 Route::post('/save-checkout-customer', 'CheckoutController@save_checkout_customer');
