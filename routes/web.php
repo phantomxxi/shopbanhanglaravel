@@ -15,6 +15,7 @@
 // Frontend
 Route::get('/', 'HomeController@index');
 Route::get('/trang-chu', 'HomeController@index');
+Route::post('/tim-kiem', 'HomeController@search');
 
 // Danh muc + Thuong hieu san pham Trang chu
 Route::get('/danh-muc-san-pham/{category_id}', 'CategoryProduct@show_category_home');
