@@ -19,12 +19,12 @@ class CartController extends Controller
         $product_info = DB::table('tbl_product')->where('product_id', $productId)->first();
 
 //        Cart::add('293ad', 'Product 1', 1, 9.99, 550);
-          Cart::destroy();
+//          Cart::destroy();
         $data['id'] = $product_info->product_id;
         $data['qty'] = $quantity;
         $data['name'] = $product_info->product_name;
         $data['price'] = $product_info->product_price;
-        $data['weight'] = '123';
+        $data['weight'] = $product_info->product_price;
         $data['options']['image'] = $product_info->product_image;
         Cart::add($data);
         Cart::setGlobalTax(10);
