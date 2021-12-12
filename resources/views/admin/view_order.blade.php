@@ -19,15 +19,15 @@
                     <thead>
                     <tr>
 
-                        <th>Tên người mua</th>
-                        <th>Địa chỉ</th>
+                        <th>Tên khách hàng</th>
+                        <th>Số điện thoại</th>
                         <th style="width:30px;"></th>
                     </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td></td>
-                            <td></td>
+                            <td>{{$order_by_id->customer_name}}</td>
+                            <td>{{$order_by_id->customer_phone}}</td>
                         </tr>
                     </tbody>
                 </table>
@@ -55,15 +55,17 @@
                     <thead>
                     <tr>
 
-                        <th>Tên người mua</th>
+                        <th>Tên người vận chuyển</th>
                         <th>Địa chỉ</th>
+                        <th>Số điện thoại</th>
                         <th style="width:30px;"></th>
                     </tr>
                     </thead>
                     <tbody>
                     <tr>
-                        <td></td>
-                        <td></td>
+                        <td>{{$order_by_id->shipping_name}}</td>
+                        <td>{{$order_by_id->shipping_address}}</td>
+                        <td>{{$order_by_id->shipping_phone}}</td>
                     </tr>
                     </tbody>
                 </table>
@@ -116,28 +118,21 @@
                                 <input type="checkbox"><i></i>
                             </label>
                         </th>
-                        <th>Tên người đặt</th>
-                        <th>Tổng giá tiền</th>
-                        <th>Tình trạng</th>
-                        <th>Hiển thị</th>
+                        <th>Tên sản phẩm</th>
+                        <th>Số lượng</th>
+                        <th>Giá</th>
+                        <th>Tổng tiền</th>
                         <th style="width:30px;"></th>
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
+                        <tr>
                         <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>
-                            <a  href="" class="active styling-edit" ui-toggle-class="">
-                                <i class="fa fa-pencil-square-o text-success text-active"></i>
-                            </a>
-                            <a onclick="return confirm('Bạn có chắc chắn muốn xóa đơn hàng này không?')" href="" class="active styling-edit" ui-toggle-class="">
-                                <i class="fa fa-times text-danger text"></i>
-                            </a>
-                        </td>
-                    </tr>
+                        <td>{{$order_by_id->product_name}}</td>
+                        <td>{{$order_by_id->product_sales_quantity}}</td>
+                        <td>{{$order_by_id->product_price}}</td>
+                        <td>{{$order_by_id->order_total}}</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
