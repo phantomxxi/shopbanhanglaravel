@@ -33,6 +33,7 @@ class CheckoutController extends Controller
         return view('admin_layout')->with('admin.view_order', $manager_order_by_id);
 
     }
+
     public function login_checkout(){
 
         $cate_product = DB::table('tbl_category_product')->where('category_status','0')->orderby('category_id','desc')->get();
