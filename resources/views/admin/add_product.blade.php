@@ -20,11 +20,24 @@
                             {{ csrf_field() }}
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Tên sản phẩm</label>
-                                <input type="text" name="product_name" class="form-control" id="exampleInputEmail1" placeholder="Tên sản phẩm">
+                                <input type="text"
+                                       data-validation="length"
+                                       data-validation-length="min10"
+                                       data-validation-error-msg="Làm ơn điền ít nhất 3 kí tự"
+                                       name="product_name"
+                                       class="form-control"
+                                       id="exampleInputEmail1"
+                                       placeholder="Tên sản phẩm">
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Giá sản phẩm</label>
-                                <input type="text" name="product_price" class="form-control" id="exampleInputEmail1" placeholder="Giá sản phẩm">
+                                <input type="text"
+                                       data-validation="number"
+                                       data-validation-length="min10"
+                                       data-validation-error-msg="Làm ơn điền số tiền"
+                                       name="product_price" class="form-control"
+                                       id="exampleInputEmail1"
+                                       placeholder="Giá sản phẩm">
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Hình ảnh sản phẩm</label>
